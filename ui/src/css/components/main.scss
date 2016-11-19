@@ -1,0 +1,59 @@
+.main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.buttonStyle{
+	margin: 12px;
+	backgroundColor: #B1DDF3;
+}
+
+.background{
+	width: 100%;
+	height: 400px;
+	background: #FFB6C1;
+}
+
+.mainCard{
+	margin-top: 250px;
+	display: flex;
+	justify-content:center;
+	align-self: center;
+	width: 800px;
+	height: 700px;
+	z-index: 10;
+	position: absolute;
+}
+
+.logo{
+	width: 100%;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+
+}
+
+.header{
+	width: 100%;
+	height: 75px;
+	display: flex;
+	justify-content: center;
+	font-family: 'Ubuntu';
+	font-size: 30px;
+}
+
+.description{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	font-family: 'Ubuntu';
+	font-size: 15px;
+}
+
+.select{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
