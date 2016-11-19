@@ -18,13 +18,19 @@ $duration: 1.5s;
 }
 
 
-@mixin sheet($color, $shift) {
+
+@mixin sheet($color, $index) {
+	@include transform(translate(-$shift*$index, -$shift*$index));
+	//@include animation(lift $duration ease-in-out alternate infinite);
 	@include material($size, $size, #69D2E7);
 	@include transform(translate(-$shift + 500px, -$shift + 500px));
 	position: absolute;
 	overflow: hidden;
-	opacity: 0.5;
 	background: $color;
+	position: absolute;
+	z-index: $index;
+
+
 }
 
 
@@ -47,32 +53,22 @@ body {
 
 .isometric {
 	opacity: 0.5;
-	@include transform(rotateX(60deg) rotateY(0deg) rotateZ(45deg) 
+	@include transform(rotateX(0deg) rotateY(0deg) rotateZ(0deg) // x = 60 z= 45
 		translate(-38%, 38%) scale3d(1, 1, 1)); // translate is just to centre it on the page
 }
 
 .sheetOne{
-	@include sheet(#A7DBD8, 80px);
-	z-index: 0;
+	@include sheet(#A7DBD8, 1);
+	
 }
 
 .sheetTwo{
-	@include sheet(#000000, 160px);
-	z-index: 1;
-
-
-}
-
-.sheetThree{
-	@include sheet(#000000, 100px);
-	z-index: 2;
-
-
+	@include sheet(#FF0000, 2);
 }
 
 .floor {
 	opacity: 0.5;
-	@include material($size, $size, #69D2E7);
+	@include material($size, $size, #00CAFE);
 	
 	
 	position: absolute;
