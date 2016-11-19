@@ -16,7 +16,7 @@ export default class Graph extends Component {
       <div className = 'graph'>
       	<div className = 'container'>
       		<div className = 'floor isometric'>
-            <Sheet color='#A7DBD8' index='1' />
+            <Sheet color='#A7DBD8' index='1' /> 
 
 				</div>
 			 </div>
