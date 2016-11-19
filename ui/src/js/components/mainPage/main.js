@@ -1,6 +1,6 @@
 import Graph from 'js/components/mainPage/graph';
 import Title from 'js/components/mainPage/title';
-import RaisedButton from 'material-ui/RaisedButton';  
+import FlatButton from 'material-ui/FlatButton';
 import React, {Component} from 'react';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 
@@ -29,8 +29,8 @@ export default class Main extends Component {
 
             <div className = 'select'>
 
-              <RaisedButton label="PROFILE" className = 'buttonStyle' backgroundColor='#B1DDF3/>
-              <RaisedButton label="GENERAL" className = 'buttonStyle' backgroundColor: #B1DDF3/>
+              <FlatButton label="Profile" className = 'buttonStyle' primary={true} />
+              <FlatButton label="General" className = 'buttonStyle' primary={true} />
 
             </div>
 
