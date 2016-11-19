@@ -19,7 +19,9 @@ export default class Graph extends Component {
             </div>
             <div className = 'sheetTwo'>
             </div>
-				</div>
+            <div className = 'sheetThree'>
+            </div>
+				  </div>
 			 </div>
       </div>
     );

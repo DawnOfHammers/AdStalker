@@ -17,20 +17,18 @@ export default class Main extends Component {
 
       <div className = 'main'>
 
-        <div className = 'background'> </div>  
 
           <Card className = 'mainCard'>
-
+            <div className = 'wrapper'>
             <div className = 'logo'></div>
 
             <div className = 'header'><b>BEST APP</b></div>
 
             <div className = 'description'>A really cool app</div>
 
-            <div className = 'select'>
-
-              <FlatButton label="Profile" className = 'buttonStyle' primary={true} />
-              <FlatButton label="General" className = 'buttonStyle' primary={true} />
+            <Card className = 'displayCard'>
+              
+            </Card>
 
             </div>
 
