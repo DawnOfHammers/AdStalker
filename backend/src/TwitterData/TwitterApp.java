@@ -49,7 +49,7 @@ public class TwitterApp {
 
 		try {
 			for (int i = 0; i<tag.length; i++) {
-				bw = new BufferedWriter(new FileWriter(tag[i]+".txt"));
+				bw = new BufferedWriter(new FileWriter("/Users/Seohee/Documents/HackwithIX/AdStocker/backend/google-api-python-client-1.5.5/"+tag[i]+".txt"));
 				Query query = new Query("#"+tag[i]);
 				query.count(2000);
 				QueryResult result = twitter.search(query);

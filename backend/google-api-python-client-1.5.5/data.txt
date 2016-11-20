@@ -1,0 +1,15 @@
+#MLB 0.3
+#NFL 0.1
+#apple 0.1
+#Business 0.4
+#duterte 0
+#fitbit 0.2
+#hillary 0
+#indexexchange 0.2
+#iphone7 0.1
+#kimjongun 0
+#NBA 0.2
+#ps4 0.2
+#Sports 0.3
+#starbucks 0
+#Volkswagen 0.1
