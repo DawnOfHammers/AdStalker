@@ -1,34 +1,23 @@
 @import "bourbon";
 
 $shift: 80px;
-$size: 100px;
+$size: 500px;
 $duration: 1.5s;
 
-@mixin material($width, $height, $color) {
+@mixin material($width, $height) {
 	width: $width;
 	height: $height;
 	border-radius: 2px;
-
-	background: $color;
-		
-	// Thickness - the borders actually extend too far, but with such a small thickness it's not really visible.
-	border-bottom: 4px solid darken($color, 20%);
-	border-right: 4px solid darken($color, 20%);
 
 }
 
 
 
-@mixin sheet($color, $index) {
-	@include transform(translate(-$shift*$index, -$shift*$index));
+@mixin sheet() {
+	//@include transform(translate(-$shift, -$shift));
 	//@include animation(lift $duration ease-in-out alternate infinite);
-	@include material($size, $size, #69D2E7);
-	@include transform(translate(-$shift + 500px, -$shift + 500px));
+	@include material($size, $size);
 	position: absolute;
-	overflow: hidden;
-	background: $color;
-	position: absolute;
-	z-index: $index;
 
 
 }
@@ -57,18 +46,21 @@ body {
 		translate(-38%, 38%) scale3d(1, 1, 1)); // translate is just to centre it on the page
 }
 
-.sheetOne{
-	@include sheet(#A7DBD8, 1);
+.sheet{
+	@include sheet();
 	
 }
 
-.sheetTwo{
-	@include sheet(#FF0000, 2);
-}
 
 .floor {
 	opacity: 0.5;
-	@include material($size, $size, #00CAFE);
+	@include material($size, $size);
+
+	background: #00CAFE;
+		
+	// Thickness - the borders actually extend too far, but with such a small thickness it's not really visible.
+	border-bottom: 4px solid darken(#00CAFE, 20%);
+	border-right: 4px solid darken(#00CAFE, 20%);
 	
 	
 	position: absolute;
