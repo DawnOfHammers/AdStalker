@@ -69,6 +69,12 @@ body {
 	left: 50%;
 	top: 10%;
 }
+// Stuff for twitter data graph
+.dataGraph {
+	width: 450px;
+	height: 500px;
+	margin: 20px;
+}
 
 @include keyframes(lift) {
 	0%, from {
