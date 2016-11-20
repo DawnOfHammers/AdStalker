@@ -10,10 +10,20 @@ export default class Display extends Component {
   }
 
   render () {
+
+    const divStyle = {
+      background: this.props.background
+    }
     return (
 
+
       <Card className = 'displayCard'>
-              
+        <div
+          className = "titleCard"
+          style={
+            divStyle
+          }
+        >{this.props.name}</div>
       </Card>
     );
   }

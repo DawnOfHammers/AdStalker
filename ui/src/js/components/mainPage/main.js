@@ -1,4 +1,6 @@
 import Graph from 'js/components/mainPage/graph';
+import Display from 'js/components/mainPage/display';
+import Background from 'js/components/mainPage/background';
 import Title from 'js/components/mainPage/title';
 import FlatButton from 'material-ui/FlatButton';
 import React, {Component} from 'react';
@@ -18,22 +20,22 @@ export default class Main extends Component {
       <div className = 'main'>
 
 
-          <Card className = 'mainCard'>
-            <div className = 'wrapper'>
+          <Card className = 'mainCard'  style={{backgroundColor: '#424242'}} >
             <div className = 'logo'></div>
 
             <div className = 'header'><b>BEST APP</b></div>
 
             <div className = 'description'>A really cool app</div>
 
-            <Card className = 'displayCard'>
-              
-            </Card>
 
-            </div>
 
+
+           <div className = 'displaySection'>
+              <Display name = "Current State" background = "#E53935"/>
+              <Display  name = "Twitter Data" background = "#4DD0E1"/>
+          </div>
           </Card> 
-
+          
       </div>
     );
   }
