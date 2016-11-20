@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 export default class Sheet extends Component {
 
-  displayName: 'Graph';
+  displayName: 'Sheet';
   props: any;
 
   constructor(props){
@@ -14,12 +14,12 @@ export default class Sheet extends Component {
   render () {
     var color = this.props.color;
     //shift factor
-    var x = 80*this.props.index;
+    var x = this.props.factor;
     const style = {
                   background : color,
                   borderBottom : "4px solid darken(" + color + ", 20%)",
                   borderRight : "4px solid darken("+ color+ ", 20%)",
-                  webkitTransform: "translate(-"+x+"px,-"+ x+"px)",
+                  WebkitTransform: "translate(-"+x+"px,-"+ x+"px)",
                   msTransform: "translate(-"+x+"px,-"+ x+"px)",
                   transform: "translate(-"+x+"px,-"+ x+"px)"
                   };
