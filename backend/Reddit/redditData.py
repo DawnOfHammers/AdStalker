@@ -12,27 +12,32 @@ def get_replies(comment, reply_list):
     return reply_list
 
 #state your purpose for conducting the comment scrape
-r = praw.Reddit('get comments from r/nba for data by User: danny')
-
-subreddit = r.get_subreddit('nba')
-subreddit_comments = subreddit.get_comments()
-
+r = praw.Reddit('get comments from r for data by User: danny')
+subreddits = ['michaeljordan', 'MLB', 'NFL', 'NBA',
+						 'hillary', 'kimjongun', 'duterte',
+						 'ps4', 'iphone7', 'amazon', 'fitbit',
+						 'starbucks', 'apple', 'Volkswagen']
 
 submission = r.get_submission(submission_id=sub_id)
 submission.replace_more_comments(limit=None, threshold=0)
 
 # final array for writing to file
 final = []
+for s in subreddits:
+    subreddit = r.get_subreddit(s)
+    subreddit_comments = subreddit.get_comments()
 
-for comment in subreddit_comments:
-    """ loops through all comments to submission """
-    x = ["hello"]  # array that holds the comment and all replies
-    # get all replies and append it to our array for writing to file
-    final.append(get_replies(comment, x))
-with open('nba.csv', 'a') as outf:
-    """ open file and write to it """
-    # 2 dimension array needs two for loops
-    for ele in final:
-        for ele2 in ele:
-            # write to file in the proper comma delimited format, one per line
-            outf.write(u"{0},{1}\n".format(ele2['id'], ele2['comment']).encode('utf-8'))
+    for comment in subreddit_comments:
+        """ loops through all comments to submission """
+        x = []  # array that holds the comment and all replies
+        # get all replies and append it to our array for writing to file
+        final.append(get_replies(comment, x))
+    path = 'C:/Users/yhw99_000/Documents/GitHub\AdStocker/backend/%s.txt' %(s,)
+    with open(path, 'a') as outf:
+        """ open file and write to it """
+        # 2 dimension array needs two for loops
+        for ele in final:
+            for ele2 in ele:
+                # write to file in the proper comma delimited format, one per line
+                outf.write(u"{0},{1}\n".format(ele2['id'], ele2['comment']).encode('utf-8'))
+        outf.close()

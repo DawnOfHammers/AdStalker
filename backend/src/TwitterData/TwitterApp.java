@@ -39,7 +39,7 @@ public class TwitterApp {
 				.setOAuthAccessTokenSecret("iHjaEASicgMnDMkDDgJ32jwbkYlrrsQ1RrHsw5JI5xkNN");
 		TwitterFactory tf = new TwitterFactory(cf.build());
 		Twitter twitter = tf.getInstance();
-		String [] tag = {"JORDAN", "MLB", "NFL", "NBA",
+		String [] tag = {"michaeljordan", "MLB", "NFL", "NBA",
 						 "donaldtrumph", "hillary", "kimjongun", "duterte",
 						 "ps4", "iphone7", "amazon", "fitbit",
 						 "indexexchange", "starbucks", "apple", "Volkswagen"};
