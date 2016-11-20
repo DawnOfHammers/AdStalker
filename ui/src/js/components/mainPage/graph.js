@@ -22,9 +22,9 @@ export default class Graph extends Component {
     for (let i=0; i<list.length; i++) {
       var transFactor = (list[i]/maxVal)*maxHeight;
       var sheet = <Sheet 
-              color = {"rgb(" + increment*(i+1) + ", 167," + (255-increment*(i+1)) + ")"}
-              factor = {transFactor}
-              value = {list[i]}
+              color = {"rgb(" + increment*(i+1) + ", 167," + (255-increment*(i+1)) + ")"} 
+              factor = {transFactor} 
+              value = {list[i]} 
               key = {list[i]} 
               />
       sheets.push(sheet)

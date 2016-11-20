@@ -24,9 +24,7 @@ hr{
 
 }
 
-.stackGraph{
-	z-index: 1000;
-}
+
 
 .mainCard{
 	display: flex;
@@ -44,10 +42,56 @@ hr{
 
 }
 
+.wireContainer{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.wire{
+	width: 400px;
+	height: 70px;
+	border-top: 2px solid #FFA726;
+	border-right: 2px solid #FFA726;
+	border-left: 2px solid #FFA726;
+}
+
+
+.circleContainer{
+	width: 100%;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+}
+
+.circle{
+	width: 25px;
+	height: 25px;
+	border: 2px solid #FFA726;
+	border-radius: 50%;
+}
+
+.vertContainer{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.vert{
+	width: 2px;
+	height: 50px;
+	background: #FFA726;
+}
+
+
 .displaySection{
-	margin-top: 75px;
+
+	margin-top: 20px;
 	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 
 }
