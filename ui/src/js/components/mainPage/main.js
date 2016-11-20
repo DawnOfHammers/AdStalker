@@ -31,8 +31,12 @@ export default class Main extends Component {
 
 
            <div className = 'displaySection'>
-              <Display name = "Current State" background = "#E53935"/>
-              <Display  name = "Twitter Data" background = "#4DD0E1"/>
+              <Display name = "Current State" background = "#E53935" 
+                graph = {<div className = "stackGraph">
+          <Graph data = {[0,1,2,3,4,5]}/>
+        </div>}/>
+                
+              <Display name = "Twitter Data" background = "#4DD0E1"/>
           </div>
           </Card> 
           

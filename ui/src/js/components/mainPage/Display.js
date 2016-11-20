@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import Graph from 'js/components/mainPage/graph';
+
 
 export default class Display extends Component {
 
@@ -24,6 +26,7 @@ export default class Display extends Component {
             divStyle
           }
         >{this.props.name}</div>
+        {this.props.graph}
       </Card>
     );
   }

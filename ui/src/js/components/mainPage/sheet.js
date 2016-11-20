@@ -28,6 +28,8 @@ export default class Sheet extends Component {
                   WebkitTransform: "translate(-"+x+"px,-"+ x+"px)",
                   msTransform: "translate(-"+x+"px,-"+ x+"px)",
                   transform: "translate(-"+x+"px,-"+ x+"px)",
+
+                
                   };
 
     return (
