@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default class Sheet extends Component {
 
@@ -8,6 +8,12 @@ export default class Sheet extends Component {
 
   constructor(props){
     super(props);
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  // Handle the event of when the pane is clicked
+  handleClick() {
+    console.log(this.props.value)
   }
 
   render () {
@@ -25,7 +31,11 @@ export default class Sheet extends Component {
                   };
 
     return (
-            <div className='sheet' style={style}> 
+            <div className='sheet' 
+              style={style}
+              title= {"CPM=" +this.props.value} 
+              onClick={this.handleClick} 
+              >
             </div>
     );
   }
