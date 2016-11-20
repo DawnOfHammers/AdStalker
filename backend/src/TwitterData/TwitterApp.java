@@ -1,11 +1,15 @@
 package TwitterData;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import twitter4j.JSONObject;
 import twitter4j.Query;
@@ -16,7 +20,14 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
+
+
+
 public class TwitterApp {
+	
+	
+
+	
 	public static void main(String[] args) throws TwitterException{
 		JSONObject obj = new JSONObject();
 		
@@ -28,26 +39,32 @@ public class TwitterApp {
 				.setOAuthAccessTokenSecret("iHjaEASicgMnDMkDDgJ32jwbkYlrrsQ1RrHsw5JI5xkNN");
 		TwitterFactory tf = new TwitterFactory(cf.build());
 		Twitter twitter = tf.getInstance();
-		 
-		String [] tag = {"Sports", "Politics", "Entertainment", "Business"};
+		String [] tag = {"JORDAN", "MLB", "NFL", "NBA",
+						 "donaldtrumph", "hillary", "kimjongun", "duterte",
+						 "ps4", "iphone7", "amazon", "fitbit",
+						 "indexexchange", "starbucks", "apple", "Volkswagen"};
 		BufferedWriter bw = null;
 		String text;
+		Set<String> alreadyPresent = new HashSet<String>();
+
 		try {
 			for (int i = 0; i<tag.length; i++) {
-				bw = new BufferedWriter(new FileWriter(tag[i]+".txt"));
+				bw = new BufferedWriter(new FileWriter("/Users/Seohee/Documents/HackwithIX/AdStocker/backend/google-api-python-client-1.5.5/"+tag[i]+".txt"));
 				Query query = new Query("#"+tag[i]);
-				query.count(40);
+				query.count(2000);
 				QueryResult result = twitter.search(query);
 				for (Status st: result.getTweets()) {
 					text = st.getText();
-					if (text.startsWith("RT")){
-						String [] info = text.split(":", 2);
-						//System.out.println(info[1]);
-						bw.write(info[1]);
-						bw.newLine();
-					}
-			}
+					 if(!alreadyPresent.contains(text)) {
+						 bw.write(text);
+						 bw.newLine();
+					 }
+					 else continue;
+					 alreadyPresent.add(text);
+				}
+				
 				bw.close();
+				
 			}
 		} catch (TwitterException te) {
 			System.out.println("Failed to search tweets: "+te.getMessage());
