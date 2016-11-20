@@ -1,21 +1,20 @@
 @import "bourbon";
 
 $shift: 80px;
-$size: 500px;
+$size: 200px;
 $duration: 1.5s;
 
 @mixin material($width, $height) {
 	width: $width;
 	height: $height;
 	border-radius: 2px;
-
 }
 
 
 
 @mixin sheet() {
 	//@include transform(translate(-$shift, -$shift));
-	//@include animation(lift $duration ease-in-out alternate infinite);
+	//@include animation(lift $duration ease-in );
 	@include material($size, $size);
 	position: absolute;
 
@@ -34,6 +33,7 @@ body {
 	height: 400px;
 	display: flex;
 	justify-content: center;
+	position: absolute;
 }
 
 .container{
@@ -41,28 +41,30 @@ body {
 }
 
 .isometric {
-	opacity: 0.5;
-	@include transform(rotateX(0deg) rotateY(0deg) rotateZ(0deg) // x = 60 z= 45
+	opacity: 1;
+	@include transform(rotateX(60deg) rotateY(0deg) rotateZ(45deg) // x = 60 z= 45
 		translate(-38%, 38%) scale3d(1, 1, 1)); // translate is just to centre it on the page
 }
 
 .sheet{
 	@include sheet();
-	
+	opacity : 0.4;
 }
 
-
+.sheet:hover {
+	opacity : 0.8;
+}
 .floor {
-	opacity: 0.5;
+	opacity: 0.9;
 	@include material($size, $size);
 
-	background: #00CAFE;
+	background: #000000;
 		
 	// Thickness - the borders actually extend too far, but with such a small thickness it's not really visible.
-	border-bottom: 4px solid darken(#00CAFE, 20%);
-	border-right: 4px solid darken(#00CAFE, 20%);
-	
-	
+	border-bottom: 4px solid darken(#000000, 20%);
+	border-right: 4px solid darken(#000000, 20%);
+
+	@include transform(translate(100,100))
 	position: absolute;
 	left: 50%;
 	top: 10%;

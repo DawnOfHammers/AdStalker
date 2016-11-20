@@ -9,10 +9,10 @@ export default class Sheet extends Component {
   constructor(props){
     super(props);
   }
-  
 
   render () {
     var color = this.props.color;
+
     //shift factor
     var x = this.props.factor;
     const style = {
@@ -21,7 +21,7 @@ export default class Sheet extends Component {
                   borderRight : "4px solid darken("+ color+ ", 20%)",
                   WebkitTransform: "translate(-"+x+"px,-"+ x+"px)",
                   msTransform: "translate(-"+x+"px,-"+ x+"px)",
-                  transform: "translate(-"+x+"px,-"+ x+"px)"
+                  transform: "translate(-"+x+"px,-"+ x+"px)",
                   };
 
     return (
