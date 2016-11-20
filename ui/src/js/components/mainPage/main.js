@@ -31,6 +31,9 @@ export default class Main extends Component {
 
 
            <div className = 'displaySection'>
+              <div className = 'vertContainer'><div className = 'vert'></div></div>
+              <div className = 'circleContainer'><div className = 'circle'></div></div>
+              <div className = 'wireContainer'><div className = 'wire'></div></div>
               <Display name = "Current State" background = "#E53935" 
                 graph = {<div className = "stackGraph">
           <Graph data = {[0,1,2,3,4,5]}/>

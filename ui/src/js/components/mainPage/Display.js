@@ -17,8 +17,8 @@ export default class Display extends Component {
       background: this.props.background
     }
     return (
-
-
+      
+      
       <Card className = 'displayCard'>
         <div
           className = "titleCard"
