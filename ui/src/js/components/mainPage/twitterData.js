@@ -5,12 +5,13 @@ export default class TwitterData extends Component {
 
   displayName: 'Twitter';
   props: any;
-  maxTen() {
+
+  maxTen(data) {
   	var tuples = [];
 
-	for (var key in this.props.data) {
-		if (this.props.data.hasOwnProperty(key)){
-			tuples.push([key, this.props.data[key]]);
+	for (var key in data) {
+		if (data.hasOwnProperty(key)){
+			tuples.push([key, data[key]]);
 		}
 	};
 
@@ -36,8 +37,14 @@ export default class TwitterData extends Component {
 	
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.props.data = nextProps.data;
+    console.log(nextProps);
+  }  
+
   render () {
-  	var maxTen = this.maxTen();
+    console.log(this.props.data)
+  	var maxTen = this.maxTen(this.props.data.allData[this.props.data.index].twitterData);
     return (
     	<DataGraph tags={maxTen[0]} sentiment={maxTen[1]}/>
     );

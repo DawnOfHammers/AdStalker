@@ -6,6 +6,17 @@ export default class DataGraph extends Component {
   displayName: 'Twitter';
   props: any;
 
+  constructor(props){
+    super(props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    // You don't have to do this check first, but it can help prevent an unneeded render
+
+    
+}
+
+
   makeLabels(list) {
     var increment = Math.floor(255/list.length);
     var labels= []

@@ -12,11 +12,17 @@ export default class Label extends Component {
 
 render () {
 	var style = {
-		height : this.props.height
+		height : this.props.height,
+		
 	};
 	return (
 	<div className = 'label' style ={ {width : this.props.width+"px"}}>
-		<RaisedButton label={this.props.label} backgroundColor = {this.props.color} fullWidth={true} style={style}/>
+		<RaisedButton label={this.props.label} 
+		backgroundColor = {this.props.color} 
+		fullWidth={true} 
+		style={style}
+		labelColor ={"white"}
+		/>
 
 	</div>
 	);
