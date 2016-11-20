@@ -4,34 +4,42 @@ import Sheet from 'js/components/mainPage/sheet';
 
 export default class Graph extends Component {
 
-  displayName: 'Graph';
   props: any;
-
   constructor(){
     super();
-  }
+    var data = [1,2,3,4,5]
 
-  render () {
+  }
+  makeSheets(data) {
+    var length = data.length;
+    var increment = Math.floor(255/length);
+    var sheets = []
+
+    for (let i=1; i<length+1; i++) {
+      var sheet = <Sheet 
+              color = {"rgb(" + increment*i + ", 167," + (255-increment*i) + ")"}
+              index = {i} />
+
+      sheets.push(sheet)
+    }
+    return sheets
+
+    
+  }
+  render() {
     return (
       <div className = 'graph'>
       	<div className = 'container'>
       		<div className = 'floor isometric'>
-<<<<<<< HEAD
-            <div className = 'sheetOne'> 
-            </div>
-            <div className = 'sheetTwo'>
-            </div>
-            <div className = 'sheetThree'>
-            </div>
-				  </div>
-=======
-            <Sheet color='#A7DBD8' index='1' /> 
+            {this.makeSheets(this.data)}
 
-				</div>
->>>>>>> 898f80ad93bf1fd92f933d83c4d5d075ee796253
+            </div>
 			 </div>
       </div>
     );
   }
+
+
+
 
 }
