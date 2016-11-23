@@ -1,6 +1,6 @@
-# This repository contains the API and UI containers for #HackWithIX
+# AdStalker
 
-We connect real time twitter data to ad tech
+We're trying to connect real time twitter data to ad tech
 
 
 
