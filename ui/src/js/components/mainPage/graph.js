@@ -36,7 +36,8 @@ export default class Graph extends Component {
               key = {list[i]}
               index = {list.length - i} 
               data = {this.props.data}
-            
+              onClickSheetFn={this.props.onClickSheetFn}
+
               />
       sheets.push(sheet)
     }

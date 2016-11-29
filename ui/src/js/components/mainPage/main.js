@@ -38,6 +38,10 @@ export default class Main extends Component {
     
   }
 
+  onClickSheet(sheetId) {
+    alert(sheetId);
+  }
+
 
   render () {
 
@@ -64,7 +68,7 @@ export default class Main extends Component {
               <div className = 'wireContainer'><div className = 'wire'></div></div>
               <Display name = "Current States" background = "#E53935" 
                 graph = {<div className = "stackGraph">
-          <Graph data = {this.state}/>
+          <Graph data = {this.state} onClickSheetFn={this.onClickSheet}/>
         </div>}/>
                 
               <Display name = "Twitter Data" background = "#4DD0E1" 

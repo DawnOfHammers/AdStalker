@@ -36,7 +36,8 @@ export default class Sheet extends Component {
     return (
             <div className='sheet' 
               style={style}
-              title= {"CPM=" +this.props.value} 
+              title= {"CPM=" +this.props.value}
+              onClick={() => this.props.onClickSheetFn(this.props.index)}
                
               >
             </div>
