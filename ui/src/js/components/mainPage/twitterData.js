@@ -37,11 +37,6 @@ export default class TwitterData extends Component {
 	
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.props.data = nextProps.data;
-    console.log(nextProps);
-  }  
-
   render () {
     console.log(this.props.data)
   	var maxTen = this.maxTen(this.props.data.allData[this.props.data.index].twitterData);

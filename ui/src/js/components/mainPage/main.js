@@ -25,6 +25,7 @@ export default class Main extends Component {
     this.state = {index: 3, allData: [appData1 , appData2 , appData3 , appData4,
                  appData5, appData6, appData7, appData8, appData9]}
     this.handleClick = this.handleClick(this);
+    this.onClickSheet = this.onClickSheet.bind(this);
 
 
   }
@@ -39,7 +40,7 @@ export default class Main extends Component {
   }
 
   onClickSheet(sheetId) {
-    alert(sheetId);
+    this.setState({ index: sheetId });
     // Paul
   }
 
